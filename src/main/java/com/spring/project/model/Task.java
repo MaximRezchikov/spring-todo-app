@@ -45,4 +45,19 @@ public class Task {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Task task = (Task) o;
+
+        return taskId != null ? taskId.equals(task.taskId) : task.taskId == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return taskId != null ? taskId.hashCode() : 0;
+    }
 }
